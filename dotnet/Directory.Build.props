@@ -11,7 +11,7 @@
     <SourceDir>$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), 'Directory.Build.props'))</SourceDir>
     <Artifacts>$(SourceDir)\artifacts\$(MSBuildProjectName)</Artifacts>
 
-    <OutputPath>$(Artifacts)\bin</OutputPath>
+    <OutputPath>$(Artifacts)\bin\$(Configuration)</OutputPath>
     <BaseOutputPath>$(Artifacts)\obj</BaseOutputPath>
     <BaseIntermediateOutputPath>$(BaseOutputPath)</BaseIntermediateOutputPath>
     <PackageOutputPath>$(SourceDir)nuget</PackageOutputPath>
