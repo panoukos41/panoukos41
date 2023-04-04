@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Full Property with Set()</Title>
+      <Shortcut>propset</Shortcut>
+      <Description>Custom Full Proeprty to use with a Set() method.</Description>
+      <Author></Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fieldname</ID>
+          <Default>MyField</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propname</ID>
+          <Default>MyProperty</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[private $type$ $fieldname$;
+        public $type$ $propname$
+        {
+            get => $fieldname$;
+            set => Set(ref $fieldname$, value);
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <style>
+        .tree ul {
+            margin-left: 0px;
+        }
+
+        .tree li {
+            list-style-type: none;
+            margin: 10px;
+            position: relative;
+        }
+
+        .tree li::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -20px;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            border-radius: 0 0 0 0px;
+            width: 15px;
+            height: 15px;
+        }
+
+        .tree li::after {
+            content: "";
+            position: absolute;
+            top: 11px;
+            left: -20px;
+            border-left: 1px solid #ccc;
+            border-radius: 0px 0 0 0;
+            width: 15px;
+            height: 100%;
+        }
+
+        .tree li:last-child::after {
+            display: none;
+        }
+
+        .tree li:last-child::before {
+            border-radius: 0 0 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tree">
+        <ul>
+            aaaa
+            <li>
+                First
+            </li>
+            <li>
+                First
+            </li>
+            <li>
+                First
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

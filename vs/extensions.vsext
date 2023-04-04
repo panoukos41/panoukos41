@@ -1,0 +1,72 @@
+{
+  "id": "0562cc8d-1c94-4a33-a546-454ec92ec764",
+  "name": "My Visual Studio extensions",
+  "description": "A collection of my Visual Studio extensions",
+  "version": "1.0",
+  "extensions": [
+    {
+      "name": ".NET nanoFramework Extension",
+      "vsixId": "bf694e17-fa5f-4877-9317-6d3664b2689a"
+    },
+    {
+      "name": "Avalonia for Visual Studio 2022",
+      "vsixId": "AvaloniaVS"
+    },
+    {
+      "name": "Bundler & Minifier 2022+",
+      "vsixId": "5783ce1f-b23d-4e84-87a4-6b2cbe9e0602"
+    },
+    {
+      "name": "Extension Manager 2022",
+      "vsixId": "4a196712-2c3f-4730-ad1d-e7cda4185eb3"
+    },
+    {
+      "name": "File Differ",
+      "vsixId": "ea5c68d6-cdae-4e79-bd46-2a39e95bb256"
+    },
+    {
+      "name": "File Icons",
+      "vsixId": "3a7b4930-a5fb-46ec-a9b8-9610c8f953b8"
+    },
+    {
+      "name": "Insert Guid",
+      "vsixId": "9def4441-acfd-4dd6-bffd-4531a57dee37"
+    },
+    {
+      "name": "Live Share 2022",
+      "vsixId": "Microsoft.VisualStudio.LiveShare.2022"
+    },
+    {
+      "name": "Match Margin 2022",
+      "vsixId": "MatchMargin2022.d85a25b5-f7b3-46a9-997e-a2d669dc2c93"
+    },
+    {
+      "name": "Open in Visual Studio Code",
+      "vsixId": "e99dde0e-e023-410d-bc5d-3f76db71e3f0"
+    },
+    {
+      "name": "Productivity Power Tools Options Page 2022",
+      "vsixId": "PPTOptionsPage2022.666715a6-3ac4-4bb7-b538-4d7625f99666"
+    },
+    {
+      "name": "Project System Tools 2022",
+      "vsixId": "cb5b6a78-6fa1-4830-a272-760862eb77af"
+    },
+    {
+      "name": "ResXManager",
+      "vsixId": "43b35fe0-1f30-48de-887a-68256474202a"
+    },
+    {
+      "name": "Single-project MSIX Packaging Tools for VS 2022",
+      "vsixId": "Microsoft.SingleProjectMSIXPackagingTools.Dev17"
+    },
+    {
+      "name": "Solution Error Visualizer 2022",
+      "vsixId": "SolutionErrorVisualizer2022.a392f96b-6b33-4b53-b4bb-3376a05f986c"
+    },
+    {
+      "name": "Time Stamp Margin 2022",
+      "vsixId": "TimeStampMargin2022.255e8b14-4a53-4eb7-89a7-7ab741c1f612"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css" id="theme-stylesheet">
+    <script src="theme.js"></script>
+    <style>
+        dialog {
+            background-color: var(--background-alt);
+            color: var(--text-main);
+            border: none;
+            border-radius: 6px;
+            border-color: var(--border);
+            padding: 10px 30px;
+        }
+
+        dialog>header:first-child {
+            background-color: var(--background);
+            border-radius: 6px 6px 0 0;
+            margin: -10px -30px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        dialog::backdrop {
+            background: #0000009c;
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <input disabled id="current-theme" />
+        <button id="sbtn">Switch</button>
+    </div>
+
+    <br />
+
+    <div>
+        <button id="dbtn">Dialog</button>
+    </div>
+
+
+    <dialog id="dialog">
+        <header>This is a sample dialog</header>
+        <form method="dialog">
+            <p>What is your favorite pet animal?</p>
+            <menu>
+                <button value="feline">Cats</button>
+                <button value="canine">Dogs</button>
+                <button value="other">Others</button>
+            </menu>
+        </form>
+    </dialog>
+</body>
+
+</html>
+<script>
+    // Theme
+    const current = document.getElementById('current-theme');
+    current.placeholder = getTheme();
+    document.getElementById('sbtn').onclick = () => {
+        current.placeholder = toggleTheme();
+    }
+
+    // Dialog
+    document.getElementById('dbtn').onclick = () => {
+        document.getElementById('dialog').showModal();
+    }
+</script>

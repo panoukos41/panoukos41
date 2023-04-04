@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Union record implementation</Title>
+      <Shortcut>unionrecord</Shortcut>
+      <Description>Union record implementation with 2 cases.</Description>
+      <Author></Author>
+    </Header>
+    <Snippet>
+      <Code Language="csharp">
+        <![CDATA[public abstract record Union<T1, T2>
+{
+    protected Union() { }
+
+    public abstract TResult Match<TResult>(Func<T1, TResult> f1, Func<T2, TResult> f2);
+
+    public abstract void Match(Action<T1> a1, Action<T2> a2);
+
+    public static implicit operator Union<T1, T2>(T1 item) => new Case1(item);
+
+    public static implicit operator Union<T1, T2>(T2 item) => new Case2(item);
+
+    private sealed record Case1 : Union<T1, T2>
+    {
+        private readonly T1 item;
+
+        public Case1(T1 item) => this.item = item;
+
+        public override TResult Match<TResult>(Func<T1, TResult> f1, Func<T2, TResult> f2) => f1(item);
+
+        public override void Match(Action<T1> a1, Action<T2> a2) => a1(item);
+    }
+
+    private sealed record Case2 : Union<T1, T2>
+    {
+        private readonly T2 item;
+
+        public Case2(T2 item) => this.item = item;
+
+        public override TResult Match<TResult>(Func<T1, TResult> f1, Func<T2, TResult> f2) => f2(item);
+
+        public override void Match(Action<T1> a1, Action<T2> a2) => a2(item);
+    }
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

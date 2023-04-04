@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Full Property</Title>
+      <Shortcut>propfull</Shortcut>
+      <Description>Custom Full Property.</Description>
+      <Author></Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fieldname</ID>
+          <Default>MyField</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>propname</ID>
+          <Default>MyProperty</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[private $type$ $fieldname$;
+        
+        public $type$ $propname$
+        {
+            get => $fieldname$;
+            set => $fieldname$ = value;
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
