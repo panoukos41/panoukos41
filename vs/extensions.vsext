@@ -1,5 +1,5 @@
 {
-  "id": "0562cc8d-1c94-4a33-a546-454ec92ec764",
+  "id": "3ada65cc-f004-40b6-9eae-c294db24157b",
   "name": "My Visual Studio extensions",
   "description": "A collection of my Visual Studio extensions",
   "version": "1.0",
@@ -29,6 +29,14 @@
       "vsixId": "3a7b4930-a5fb-46ec-a9b8-9610c8f953b8"
     },
     {
+      "name": "Git Diff Margin",
+      "vsixId": "GitDiffMargin..5ef9f816-d9ce-45cd-a8fa-cd67a807df0e"
+    },
+    {
+      "name": "GitHub Themes",
+      "vsixId": "GitHubDarkTheme.869f0b49-f48e-4ba7-94dd-91368e3c8810"
+    },
+    {
       "name": "Insert Guid",
       "vsixId": "9def4441-acfd-4dd6-bffd-4531a57dee37"
     },
@@ -39,6 +47,10 @@
     {
       "name": "Match Margin 2022",
       "vsixId": "MatchMargin2022.d85a25b5-f7b3-46a9-997e-a2d669dc2c93"
+    },
+    {
+      "name": "ML.NET Model Builder 2022",
+      "vsixId": "A274A0E2-E41E-40CC-A694-8D5D14BBD2D0"
     },
     {
       "name": "Open in Visual Studio Code",
