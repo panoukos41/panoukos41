@@ -18,9 +18,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Owners>panoukos41</Owners>
-    <Authors>Panos Athanasiou</Authors>
-    <Copyright>Copyright (c) 202 Panos Athanasiou</Copyright>
+    <Owners>Panagiotis Athanasiou</Owners>
+    <Authors>Panagiotis Athanasiou</Authors>
+    <Copyright>Copyright (c) 202 Panagiotis Athanasiou</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/panoukos41/</PackageProjectUrl>
     <PackageIconUrl></PackageIconUrl>
