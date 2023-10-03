@@ -1,4 +1,5 @@
 <Project>
+  <!--Build-->
   <PropertyGroup>
     <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
@@ -7,7 +8,7 @@
     <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
     <NoWarn>$(NoWarn);IDE0039;IDE0130;IDE0290;IDE0060</NoWarn>
 
-    <RootNamespace>P41.Navigation</RootNamespace>
+    <RootNamespace>P41.</RootNamespace>
 
     <ArtifactsPath Condition="$(MSBuildProjectDirectory.Contains('tests'))">$(MSBuildThisFileDirectory)artifacts/tests</ArtifactsPath>
     <ArtifactsPath Condition="$(MSBuildProjectDirectory.Contains('samples'))">$(MSBuildThisFileDirectory)artifacts/samples</ArtifactsPath>
@@ -15,20 +16,31 @@
     <UseArtifactsOutput>true</UseArtifactsOutput>
   </PropertyGroup>
 
+  <!-- Repository -->
   <PropertyGroup>
     <Authors>Panagiotis Athanasiou</Authors>
     <Owners>panoukos41</Owners>
-    <Copyright>Copyright (c) 2023 Panagiotis Athanasiou</Copyright>
-    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright (c) 2023 $(Authors)</Copyright>
     <RepositoryUrl></RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <DefaultPackageDescription></DefaultPackageDescription>
-    <PackageTags></PackageTags>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>$(RepositoryUrl)/releases</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryLicense>MIT</RepositoryLicense>
+    <RepositoryDescription></RepositoryDescription>
+    <RepositoryTags></RepositoryTags>
+  </PropertyGroup>
+
+  <!-- Package -->
+  <PropertyGroup>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <PackageLicenseExpression>$(RepositoryLicense)</PackageLicenseExpression>
+    <DefaultPackageDescription>$(RepositoryDescription)</DefaultPackageDescription>
+    <PackageDescription>$(RepositoryDescription)</PackageDescription>
+    <PackageTags>$(RepositoryTags)</PackageTags>
+    <PackageReleaseNotes>$(RepositoryUrl)/releases</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIconUrl></PackageIconUrl>
-    <PackageDescription>$(DefaultPackageDescription)</PackageDescription>
+
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
+    <None Condition="$(MSBuildProjectDirectory.Contains('src'))" Include="$(MSBuildThisFileDirectory)/README.md" Pack="true" PackagePath="/" />
 
     <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl> 
@@ -38,11 +50,7 @@
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Condition="$(MSBuildProjectDirectory.Contains('src'))" Include="$(MSBuildThisFileDirectory)/README.md" Pack="true" PackagePath="/" />
-    <SourceRoot Include="$(MSBuildThisFileDirectory)/"/>
-  </ItemGroup>
-
+  <!-- Versioning & Sourcelink -->
   <ItemGroup>
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
