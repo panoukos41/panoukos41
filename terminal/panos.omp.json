@@ -1,8 +1,18 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
-  "console_title_template": "{{ .Folder }}",
+  "console_title_template": "{{if .Root}}${{end}} {{ .Folder }}",
   "final_space": true,
+  "palette": {
+    "arrow": "#7aa2f7",
+    "admin": "#7dcfff",
+    "time": "#bb9af7",
+    "user": "#bb9af7",
+    "path": "#F3C267",
+    "git": "#E06C75",
+    "newline": "#7aa2f7",
+    "oldline": "#73daca"
+  },
   "blocks": [
     {
       "type": "prompt",
@@ -10,50 +20,50 @@
       "segments": [
         {
           "type": "text",
-          "foreground": "lightBlue",
           "style": "plain",
-          "template": "#"
+          "foreground": "p:arrow",
+          "template": "\u279c"
         },
         {
           "type": "time",
           "style": "plain",
-          "foreground": "lightYellow"
+          "properties": {
+            "time_format": "15:04"
+          },
+          "foreground": "p:time",
+          "template": " [{{ .CurrentDate | date .Format }}] "
         },
         {
           "type": "session",
-          "alias": "User & Host",
           "style": "plain",
-          "template": "{{ if .SSHSession }}\uf817 {{ end }}<lightBlue>{{ .UserName }}</>@<green>{{ .HostName }}</>"
+          "template": "{{ if .SSHSession }}\uf817 {{ end }}<p:user>{{ .UserName }}</>"
+        },
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "p:admin",
+          "template": " \u26A1"
         },
         {
           "type": "path",
           "alias": "Path",
-          "foreground": "lightYellow",
+          "foreground": "p:path",
           "properties": {
-            "style": "full"
+            "style": "mixed"
           },
-          "style": "plain"
+          "style": "plain",
+          "template": "{{if not .Root}} {{end}}{{ .Path }} "
         },
         {
           "type": "git",
           "style": "plain",
-          "foreground": "#193549",
-          "background": "#ffeb3b",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
-            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-            "{{ if gt .Behind 0 }}#B388FB{{ end }}"
-          ],
+          "foreground": "p:git",
           "properties": {
             "fetch_status": true,
             "fetch_stash_count": true,
-            "fetch_upstream_icon": true,
-            "untracked_modes": {
-              "/Users/user/Projects/oh-my-posh/": "no"
-            }
+            "fetch_upstream_icon": true
           },
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uF692 {{ .StashCount }}{{ end }}"
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
         },
         {
           "type": "executiontime",
@@ -64,27 +74,32 @@
           }
         },
         {
-          "type": "exit",
+          "type": "status",
           "foreground": "red",
           "style": "plain"
-        },
-        {
-          "type": "text",
-          "style": "plain",
-          "template": "\n"
         }
       ]
     },
     {
+      "type": "prompt",
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
-          "type": "text",
+          "foreground": "p:newline",
           "style": "plain",
-          "template": "{{ if (.Root) }}<red>\uf0e7</>{{ else }}<lightBlue>$</>{{ end }}"
+          "template": "\u25b6",
+          "type": "text"
         }
-      ],
-      "type": "prompt"
+      ]
     }
-  ]
+  ],
+  "secondary_prompt": {
+    "foreground": "p:newline",
+    "template": "\u25b6 "
+  },
+  "transient_prompt": {
+    "foreground": "p:oldline",
+    "template": "\u279c "
+  }
 }
