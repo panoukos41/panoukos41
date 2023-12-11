@@ -1,4 +1,5 @@
-$current = (Get-ChildItem -Path . -File -Filter "*.txt" | Select-Object -ExpandProperty BaseName) ?? "v0.0.0"
+$dir = $PSScriptRoot;
+$current = (Get-ChildItem -Path $dir -File -Filter "*.txt" | Select-Object -ExpandProperty BaseName) ?? "v0.0.0"
 $latest = (Invoke-RestMethod -Method GET -Uri "https://api.github.com/repos/hashicorp/vault/releases/latest").tag_name
 
 Write-Host "Current: " -NoNewline
@@ -18,7 +19,7 @@ $version = $latest.TrimStart("v")
 $platform = "windows_amd64"
 $binaries = "https://releases.hashicorp.com/vault/$version/vault_${version}_$platform.zip"
 $checksum = "https://releases.hashicorp.com/vault/$version/vault_${version}_SHA256SUMS"
-$out = ".\.download"
+$out = "$dir\.download"
 $zip = "$out\vault-$latest.zip"
 $sha = "$out\vault-$latest.zip.sha256"
 $exe = "$out\vault.exe"
@@ -51,11 +52,11 @@ if ($(Get-FileHash -Algorithm SHA256 $zip).Hash -ne $sha256) {
 
 Write-Host "Binaries succesfully validated"
 
-Remove-Item "vault.exe" -ErrorAction Ignore
-Copy-Item $exe -Destination .
+Remove-Item "$dir\vault.exe" -ErrorAction Ignore
+Copy-Item $exe -Destination $dir
 
-Remove-Item "$current.txt" -ErrorAction Ignore
-New-Item -Path "$latest.txt" -ItemType File > $null
+Remove-Item "$dir\$current.txt" -ErrorAction Ignore
+New-Item -Path "$dir\$latest.txt" -ItemType File > $null
 
 clean
 Write-Host "Vault " -NoNewline

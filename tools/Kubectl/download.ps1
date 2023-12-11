@@ -1,4 +1,5 @@
-$current = (Get-ChildItem -Path . -File -Filter "*.txt" | Select-Object -ExpandProperty BaseName) ?? "v0.0.0"
+$dir = $PSScriptRoot;
+$current = (Get-ChildItem -Path $dir -File -Filter "*.txt" | Select-Object -ExpandProperty BaseName) ?? "v0.0.0"
 $latest = Invoke-RestMethod -Method GET -Uri "https://storage.googleapis.com/kubernetes-release/release/stable.txt"
 
 Write-Host "Current: " -NoNewline
@@ -17,7 +18,7 @@ Write-Host $latest -ForegroundColor Green
 $platform = "windows/amd64"
 $binaries = "https://dl.k8s.io/release/$latest/bin/$platform/kubectl.exe"
 $checksum = "https://dl.k8s.io/$latest/bin/$platform/kubectl.exe.sha256"
-$out = ".\.download"
+$out = "$dir\.download"
 $exe = "$out\kubectl.exe"
 $sha = "$out\kubectl.exe.sha256"
 
@@ -46,11 +47,11 @@ if ($(Get-FileHash -Algorithm SHA256 $exe).Hash -ne $(Get-Content $sha)) {
 
 Write-Host "Binaries succesfully validated"
 
-Remove-Item "kubectl.exe" -ErrorAction Ignore
-Copy-Item $exe -Destination .
+Remove-Item "$dir\kubectl.exe" -ErrorAction Ignore
+Copy-Item $exe -Destination $dir
 
-Remove-Item "$current.txt" -ErrorAction Ignore
-New-Item -Path "$latest.txt" -ItemType File > $null
+Remove-Item "$dir\$current.txt" -ErrorAction Ignore
+New-Item -Path "$dir\$latest.txt" -ItemType File > $null
 
 clean
 Write-Host "Kubectl " -NoNewline

@@ -1,4 +1,5 @@
-$current = (Get-ChildItem -Path . -File -Filter "*.txt" | Select-Object -ExpandProperty BaseName) ?? "v0.0.0"
+$dir = $PSScriptRoot;
+$current = (Get-ChildItem -Path $dir -File -Filter "*.txt" | Select-Object -ExpandProperty BaseName) ?? "v0.0.0"
 $latest = (Invoke-RestMethod -Method GET -Uri "https://api.github.com/repos/helm/helm/releases/latest").tag_name
 
 Write-Host "Current: " -NoNewline
@@ -17,7 +18,7 @@ Write-Host $latest -ForegroundColor Green
 $platform = "windows-amd64"
 $binaries = "https://get.helm.sh/helm-$latest-$platform.zip"
 $checksum = "$binaries.sha256"
-$out = ".\.download"
+$out = "$dir\.download"
 $zip = "$out\helm-$latest.zip"
 $sha = "$out\helm-$latest.zip.sha256"
 
@@ -48,10 +49,10 @@ Expand-Archive -Path $zip -DestinationPath $out
 
 $items = Get-ChildItem -Path "$out\$platform\" | Select-Object -ExpandProperty Name
 $items | Remove-Item -ErrorAction Ignore
-$items | ForEach-Object { "$out\$platform\$_" } | Copy-Item -Destination .
+$items | ForEach-Object { "$out\$platform\$_" } | Copy-Item -Destination $dir
 
-Remove-Item "$current.txt" -ErrorAction Ignore
-New-Item -Path "$latest.txt" -ItemType File > $null
+Remove-Item "$dir\$current.txt" -ErrorAction Ignore
+New-Item -Path "$dir\$latest.txt" -ItemType File > $null
 
 clean
 Write-Host "Helm " -NoNewline
