@@ -6,7 +6,7 @@
     <ImplicitUsings>true</ImplicitUsings>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
-    <NoWarn>$(NoWarn);IDE0039;IDE0130;IDE0290;IDE0060</NoWarn>
+    <NoWarn>$(NoWarn);IDE0039;IDE0130;IDE0290;IDE0060;RZ10012</NoWarn>
 
     <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts/default</ArtifactsPath>
     <ArtifactsPath Condition="$(MSBuildProjectDirectory.Contains('tests'))">$(MSBuildThisFileDirectory)artifacts/tests</ArtifactsPath>
@@ -28,7 +28,7 @@
     <RepositoryTags></RepositoryTags>
   </PropertyGroup>
 
-  <!-- Package -->
+    <!-- Package -->
   <PropertyGroup>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageLicenseExpression>$(RepositoryLicense)</PackageLicenseExpression>
@@ -36,23 +36,24 @@
     <PackageDescription>$(RepositoryDescription)</PackageDescription>
     <PackageTags>$(RepositoryTags)</PackageTags>
     <PackageReleaseNotes>$(RepositoryUrl)/releases</PackageReleaseNotes>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIconUrl></PackageIconUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
-    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
-    <None Condition="$(MSBuildProjectDirectory.Contains('src'))" Include="$(MSBuildThisFileDirectory)/README.md" Pack="true" PackagePath="/" />
+    <!--<None Condition="$(MSBuildProjectDirectory.Contains('src'))" Include="$(MSBuildThisFileDirectory)/README.md" Pack="true" PackagePath="/" />-->
 
     <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl> 
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <!-- Embed source files that are not tracked by the source control manager in the PDB -->
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <!-- Include PDB in the built .nupkg -->
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
 
-  <!-- Versioning & Sourcelink -->
   <ItemGroup>
+    <!-- Versioning -->
     <PackageReference Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="All" />
+    <!-- Sourcelink -->
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
+
 </Project>
