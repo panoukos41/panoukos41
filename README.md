@@ -9,9 +9,6 @@
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/panoukos41) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/panoukos) [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/panoukos41)  
 
-## 📊 Stats
-![Profile Stats](https://github-readme-stats.vercel.app/api?username=panoukos41&theme=radical&hide_border=true&show_icons=true)
-
 ## 🖥️ Tech I Love
 [![.NET](https://img.shields.io/badge/.NET-512bd4?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com)
 [![MAUI](https://img.shields.io/badge/MAUI-512bd4?style=for-the-badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com/apps/maui)
