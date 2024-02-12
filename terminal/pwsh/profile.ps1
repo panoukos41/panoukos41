@@ -1,5 +1,7 @@
-Import-Module PSReadLine
-Import-Module Terminal-Icons
+Import-Module PSReadLine -ErrorAction SilentlyContinue
+Import-Module Terminal-Icons -ErrorAction SilentlyContinue
+
+Set-Alias -Name "k" -Value "kubectl"
 
 [console]::InputEncoding = [console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
 
