@@ -20,5 +20,4 @@
 [![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)  
 [![Docker](https://img.shields.io/badge/docker-086dd7.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![k8s](https://img.shields.io/badge/K8S-326de6.svg?style=for-the-badge&logo=kubernetes&logoColor=white)](https://www.docker.com/)  
-[![Bootstrap](https://img.shields.io/badge/bootstrap-7952b3.svg?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![Tailwind](https://img.shields.io/badge/Tailwind-38bdf8.svg?style=for-the-badge&logo=tailwind&logoColor=white)](https://getbootstrap.com/)
