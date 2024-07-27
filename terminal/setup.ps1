@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot\pwsh\modules\.SetupMethods.psm1
+Import-Module $PSScriptRoot\pwsh\scripts\modules\.SetupMethods.psm1
 
 Modules(@(
     "PSReadLine"

@@ -3,11 +3,8 @@ dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 $tools = @(
     "dotnet-script"
     "dotnet-ef"
-    "Microsoft.Tye"
-    "nanoff"
-    "Redth.Net.Maui.Check"
-    "coverlet.console"
     "dotnet-vs"
+    "nanoff"
 )
 
 foreach ($tool in $tools) {
