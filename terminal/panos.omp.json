@@ -1,82 +1,103 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
-  "auto_upgrade": false,
-  "console_title_template": "{{if .Root}}${{end}} {{ .Folder }}",
-  "final_space": true,
   "palette": {
-    "arrow": "#7aa2f7",
     "admin": "#7dcfff",
-    "time": "#bb9af7",
-    "user": "#bb9af7",
-    "path": "#F3C267",
+    "arrow": "#7aa2f7",
     "git": "#E06C75",
     "newline": "#7aa2f7",
-    "oldline": "#73daca"
+    "oldline": "#73daca",
+    "path": "#F3C267",
+    "time": "#bb9af7",
+    "user": "#bb9af7"
   },
+  "secondary_prompt": {
+    "template": "\u25b6 ",
+    "foreground": "p:newline"
+  },
+  "transient_prompt": {
+    "template": "➜ ",
+    "foreground": "p:oldline"
+  },
+  "console_title_template": "{{if .Root}}${{end}} {{ .Folder }}",
   "blocks": [
     {
       "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "type": "text",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "➜",
           "foreground": "p:arrow",
-          "template": "\u279c"
+          "type": "text",
+          "style": "plain"
         },
         {
-          "type": "time",
-          "style": "plain",
           "properties": {
+            "cache_duration": "none",
             "time_format": "15:04"
           },
+          "template": " [{{ .CurrentDate | date .Format }}] ",
           "foreground": "p:time",
-          "template": " [{{ .CurrentDate | date .Format }}] "
+          "type": "time",
+          "style": "plain"
         },
         {
-          "type": "session",
-          "style": "plain",
-          "template": "{{ if .SSHSession }}\uf817 {{ end }}<p:user>{{ .UserName }}</>"
-        },
-        {
-          "type": "root",
-          "style": "plain",
-          "foreground": "p:admin",
-          "template": " \u26A1"
-        },
-        {
-          "type": "path",
-          "alias": "Path",
-          "foreground": "p:path",
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "{{ if .SSHSession }}\uf817 {{ end }}<p:user>{{ .UserName }}</>",
+          "type": "session",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " ⚡",
+          "foreground": "p:admin",
+          "type": "root",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
             "style": "mixed"
           },
-          "style": "plain",
-          "template": "{{if not .Root}} {{end}}{{ .Path }} "
+          "alias": "Path",
+          "template": "{{if not .Root}} {{end}}{{ .Path }} ",
+          "foreground": "p:path",
+          "type": "path",
+          "style": "plain"
         },
         {
-          "type": "git",
-          "style": "plain",
-          "foreground": "p:git",
           "properties": {
-            "fetch_status": true,
+            "cache_duration": "none",
             "fetch_stash_count": true,
+            "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} "
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "foreground": "p:git",
+          "type": "git",
+          "style": "plain"
         },
         {
-          "type": "executiontime",
-          "style": "plain",
-          "template": "{{ .FormattedMs }}",
           "properties": {
-            "always_enabled": true
-          }
+            "always_enabled": true,
+            "cache_duration": "none"
+          },
+          "template": "{{ .FormattedMs }}",
+          "type": "executiontime",
+          "style": "plain"
         },
         {
-          "type": "status",
+          "properties": {
+            "cache_duration": "none"
+          },
           "foreground": "red",
+          "type": "status",
           "style": "plain"
         }
       ]
@@ -84,23 +105,20 @@
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "p:newline",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
           "template": "\u25b6",
-          "type": "text"
+          "foreground": "p:newline",
+          "type": "text",
+          "style": "plain"
         }
-      ]
+      ],
+      "newline": true
     }
   ],
-  "secondary_prompt": {
-    "foreground": "p:newline",
-    "template": "\u25b6 "
-  },
-  "transient_prompt": {
-    "foreground": "p:oldline",
-    "template": "\u279c "
-  }
+  "version": 3,
+  "final_space": true
 }
