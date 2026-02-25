@@ -1,0 +1,140 @@
+{
+  "id": "bb9f762b-dc22-4798-b348-be357d629284",
+  "version": "1.0",
+  "name": "My Visual Studio extensions",
+  "description": "A collection of my Visual Studio extensions",
+  "extensions": [
+    {
+      "vsixId": "VSPets.74ced5aa-4286-436c-b92c-806b823c7e64",
+      "name": "VS Pets",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.VSPets",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/VSPets/1.0.29/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "BlazmExtension.a0f59921-9553-46c5-b0cf-4c4921326541",
+      "name": "BlazmExtension",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=EngstromJimmy.BlazmExtension",
+      "downloadUrl": "https://engstromjimmy.gallery.vsassets.io:443/_apis/public/gallery/publisher/EngstromJimmy/extension/BlazmExtension/1.8.1/assetbyname/Microsoft.VisualStudio.Ide.Payload?targetPlatform=b8a0d837-ea5b-49ee-beee-628e410bb8a1\u0026redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "TailwindCSSIntellisense.b29696d4-76a4-43d1-a203-c8e692368847",
+      "name": "Tailwind CSS VS2022 Editor Support",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=TheronWang.TailwindCSSIntellisense",
+      "downloadUrl": "https://theronwang.gallery.vsassets.io:443/_apis/public/gallery/publisher/TheronWang/extension/TailwindCSSIntellisense/1.13.3/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "SolutionColors.dfa813d0-736b-491d-921a-4a3503d41543",
+      "name": "Solution Colors",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.SolutionColors",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/SolutionColors/1.1.89/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "9def4441-acfd-4dd6-bffd-4531a57dee37",
+      "name": "Insert Guid",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.insertguid",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/insertguid/1.3.14/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "43b35fe0-1f30-48de-887a-68256474202a",
+      "name": "ResXManager",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=TomEnglert.ResXManager",
+      "downloadUrl": "https://tomenglert.gallery.vsassets.io:443/_apis/public/gallery/publisher/TomEnglert/extension/ResXManager/1.103.6686.0/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "bf694e17-fa5f-4877-9317-6d3664b2689a",
+      "name": ".NET nanoFramework Extension",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=nanoframework.nanoframework-vs2022-extension",
+      "downloadUrl": "https://nanoframework.gallery.vsassets.io:443/_apis/public/gallery/publisher/nanoframework/extension/nanoframework-vs2022-extension/2022.14.1.5/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "WorkspaceFiles.e5308ac4-ca47-4992-945b-9b144a10c2d0",
+      "name": "File Explorer",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WorkflowBrowser",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/WorkflowBrowser/1.0.105/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "e99dde0e-e023-410d-bc5d-3f76db71e3f0",
+      "name": "Open in Visual Studio Code",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.OpeninVisualStudioCode",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/OpeninVisualStudioCode/1.4.63/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "AvaloniaVS",
+      "name": "Avalonia for Visual Studio",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS",
+      "downloadUrl": "https://avaloniateam.gallery.vsassets.io:443/_apis/public/gallery/publisher/AvaloniaTeam/extension/AvaloniaVS/11.12.1.0/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "Microsoft.SingleProjectMSIXPackagingTools.Dev17",
+      "name": "Single-project MSIX Packaging Tools for VS 2022-26",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17",
+      "downloadUrl": "https://projectreunion.gallery.vsassets.io:443/_apis/public/gallery/publisher/ProjectReunion/extension/MicrosoftSingleProjectMSIXPackagingToolsDev17/1.7.251221100/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "3a7b4930-a5fb-46ec-a9b8-9610c8f953b8",
+      "name": "File Icons",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.FileIcons",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/FileIcons/2.8.244/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "ImagePreview.3e89687a-7648-400e-aff7-a4fd71fd0f5c",
+      "name": "Image Preview",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MadsKristensen.ImagePreview",
+      "downloadUrl": "https://madskristensen.gallery.vsassets.io:443/_apis/public/gallery/publisher/MadsKristensen/extension/ImagePreview/1.0.54/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "TemplateStudioForWinUICs.843dd154-7a62-4aab-8482-1ce4c73cb580",
+      "name": "Template Studio for WinUI (C#)",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs",
+      "downloadUrl": "https://templatestudio.gallery.vsassets.io:443/_apis/public/gallery/publisher/TemplateStudio/extension/TemplateStudioForWinUICs/5.5/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "cb5b6a78-6fa1-4830-a272-760862eb77af",
+      "name": "Project System Tools 2022",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=VisualStudioProductTeam.ProjectSystemTools2022",
+      "downloadUrl": "https://visualstudioproductteam.gallery.vsassets.io:443/_apis/public/gallery/publisher/VisualStudioProductTeam/extension/ProjectSystemTools2022/1.0.2.2305901/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "SolutionErrorVisualizer2022.a392f96b-6b33-4b53-b4bb-3376a05f986c",
+      "name": "Solution Error Visualizer 2022",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.SolutionErrorVisualizer2022",
+      "downloadUrl": "https://visualstudioplatformteam.gallery.vsassets.io:443/_apis/public/gallery/publisher/VisualStudioPlatformTeam/extension/SolutionErrorVisualizer2022/17.0/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "Microsoft.VisualStudio.LiveShare.2022",
+      "name": "Live Share 2022",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsls-vs-2022",
+      "downloadUrl": "https://ms-vsliveshare.gallery.vsassets.io:443/_apis/public/gallery/publisher/MS-vsliveshare/extension/vsls-vs-2022/1.0.5949.0/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "GitDiffMargin..5ef9f816-d9ce-45cd-a8fa-cd67a807df0e",
+      "name": "Git Diff Margin",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=LaurentKempe.GitDiffMargin",
+      "downloadUrl": "https://laurentkempe.gallery.vsassets.io:443/_apis/public/gallery/publisher/LaurentKempe/extension/GitDiffMargin/3.12.1/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "MatchMargin2022.d85a25b5-f7b3-46a9-997e-a2d669dc2c93",
+      "name": "Match Margin 2022",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.MatchMargin2022",
+      "downloadUrl": "https://visualstudioplatformteam.gallery.vsassets.io:443/_apis/public/gallery/publisher/VisualStudioPlatformTeam/extension/MatchMargin2022/17.0/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "HtmlCssClassCompletion22.f7d5f572-a75f-454b-b2b7-505fff77ba8d",
+      "name": "Better Razor CSS Class Intellisense",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=KevinMueller.HtmlCssClassCompletion22",
+      "downloadUrl": "https://kevinmueller.gallery.vsassets.io:443/_apis/public/gallery/publisher/KevinMueller/extension/HtmlCssClassCompletion22/1.15.2/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "PPTOptionsPage2022.666715a6-3ac4-4bb7-b538-4d7625f99666",
+      "name": "Productivity Power Tools Options Page 2022",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=VisualStudioPlatformTeam.ProductivityPowerToolsOptionsPage2022",
+      "downloadUrl": "https://visualstudioplatformteam.gallery.vsassets.io:443/_apis/public/gallery/publisher/VisualStudioPlatformTeam/extension/ProductivityPowerToolsOptionsPage2022/17.0/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    },
+    {
+      "vsixId": "7badbb47-7faf-4264-b15d-3b6b23da44fe",
+      "name": "MSBuild Editor",
+      "moreInfoUrl": "https://marketplace.visualstudio.com/items?itemName=mhutch.MSBuildEditor",
+      "downloadUrl": "https://mhutch.gallery.vsassets.io:443/_apis/public/gallery/publisher/mhutch/extension/MSBuildEditor/2.9.524.37316/assetbyname/Microsoft.VisualStudio.Ide.Payload?redirect=true\u0026update=true"
+    }
+  ]
+}
