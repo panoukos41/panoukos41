@@ -1,0 +1,145 @@
+@page {
+    margin: 0
+}
+
+.sheet {
+    margin: 0;
+    overflow: clip;
+    position: relative;
+    box-sizing: border-box;
+    page-break-after: always;
+}
+
+/** Paper sizes **/
+.A3 .sheet {
+    width: 297mm;
+    max-width: 297mm;
+    height: 419mm
+}
+
+.A3.landscape .sheet {
+    width: 420mm;
+    max-width: 420mm;
+    height: 296mm
+}
+
+.A4 .sheet {
+    width: 210mm;
+    max-width: 210mm;
+    height: 297mm
+}
+
+.A4.landscape .sheet {
+    width: 297mm;
+    max-width: 297mm;
+    height: 209mm
+}
+
+.A5 .sheet {
+    width: 148mm;
+    max-width: 148mm;
+    height: 209mm
+}
+
+.A5.landscape .sheet {
+    width: 210mm;
+    max-width: 210mm;
+    height: 147mm
+}
+
+.letter .sheet {
+    width: 216mm;
+    max-width: 216mm;
+    height: 279mm
+}
+
+.letter.landscape .sheet {
+    width: 280mm;
+    max-width: 280mm;
+    height: 215mm
+}
+
+.legal .sheet {
+    width: 216mm;
+    max-width: 216mm;
+    height: 356mm
+}
+
+.legal.landscape .sheet {
+    width: 357mm;
+    max-width: 357mm;
+    height: 215mm
+}
+
+/** For screen preview **/
+@media screen {
+    body {
+        background: #e0e0e0
+    }
+
+    .sheet {
+        background: white;
+        box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+        margin: 5mm auto;
+    }
+}
+
+@media print {
+    /** Paper sizes **/
+    /*.A3 .sheet {
+        width: 297mm;
+        max-width: 297mm;
+    }
+
+    .A3.landscape .sheet {
+        width: 420mm;
+        max-width: 420mm;
+    }
+
+    .A4 .sheet {
+        width: 210mm;
+        max-width: 210mm;
+    }
+
+    .A4.landscape .sheet {
+        width: 297mm;
+        max-width: 297mm;
+    }
+
+    .A5 .sheet {
+        width: 148mm;
+        max-width: 148mm;
+    }
+
+    .A5.landscape .sheet {
+        width: 210mm;
+        max-width: 210mm;
+    }
+
+    .letter .sheet {
+        width: 216mm;
+        max-width: 216mm;
+    }
+
+    .letter.landscape .sheet {
+        width: 280mm;
+        max-width: 280mm;
+    }
+
+    .legal .sheet {
+        width: 216mm;
+        max-width: 216mm;
+    }
+
+    .legal.landscape .sheet {
+        width: 357mm;
+        max-width: 357mm;
+    }*/
+
+    /** Background Colors Fix **/
+    * {
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+}

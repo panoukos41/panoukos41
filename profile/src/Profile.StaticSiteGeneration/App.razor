@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <base href="/" />
+    <link rel="stylesheet" href="~/css/app.min.css" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="@routeData" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not Found</PageTitle>
+            <p role="alert">Not Found</p>
+        </NotFound>
+    </Router>
+</body>
+</html>
+
+@code {
+    [Parameter]
+    public string? Name { get; set; }
+}

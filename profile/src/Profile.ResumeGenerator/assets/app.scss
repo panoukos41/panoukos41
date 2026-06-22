@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "./paper.css";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --text-2xs: 0.688rem; /* 11px */
+  --text-3xs: 0.625rem; /* 10px */
+  --text-4xs: 0.563rem; /*  9px  */
+}

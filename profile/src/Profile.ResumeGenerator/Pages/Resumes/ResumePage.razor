@@ -1,0 +1,32 @@
+﻿@page "/resume/{name}/template/{template}"
+@inject ResumeLoader resumeLoader
+@inject ApplicationContext context
+
+@using Profile.ResumeGenerator.Pages.Resumes.Templates;
+
+@if (Resume is null)
+{
+    return;
+}
+
+<div class="A4">
+    <Panos Resume="@Resume" ResumeName="@Name" Lang="@Lang" />
+</div>
+
+@code {
+    [Parameter]
+    public string Name {get; set;} = null!;
+
+    [Parameter]
+    public string Template {get; set;} = null!;
+
+    [Parameter, SupplyParameterFromQuery]
+    public string? Lang { get; set; }
+
+    public Resume Resume { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Resume = await resumeLoader.GetResume(Name, Lang);
+    }
+}

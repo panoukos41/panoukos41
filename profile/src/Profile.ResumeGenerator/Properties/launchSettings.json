@@ -1,0 +1,18 @@
+{
+  "profiles": {
+    "run": {
+      "commandName": "Project",
+      "commandLineArgs": "run --resumes-dir ../../resumes/",
+      "dotnetRunMessages": false,
+      "applicationUrl": "https://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "schema": {
+      "commandName": "Project",
+      "commandLineArgs": "schema --output-file ../../resumes/schema.json",
+      "dotnetRunMessages": false
+    }
+  }
+}

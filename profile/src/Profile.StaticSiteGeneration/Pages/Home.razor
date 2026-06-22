@@ -1,0 +1,16 @@
+﻿@using Profile.StaticSiteGeneration.Pages.Layouts;
+
+<LayoutView Layout="@typeof(MainLayout)">
+    <PageTitle>Home</PageTitle>
+
+    <h2>Welcome to your new app.</h2>
+</LayoutView>
+
+<SectionContent SectionName="side-bar">
+    Hello @Name!
+</SectionContent>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Name { get; set; }
+}

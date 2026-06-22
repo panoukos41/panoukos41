@@ -1,0 +1,201 @@
+﻿@inherits ResumeTemplateBase
+
+<section class="p-[8mm] font-arial flex flex-col @(Context.Command is "run" ? "sheet" : "")">
+    @* Head Top *@
+    <div class="flex items-end gap-3">
+        <h1 class="font-bold text-2xl">@Resume.Details.Name</h1>
+        <span class="font-bold text-2xl"> / </span>
+        <p class="font-medium text-lg text-gray-600">@Resume.Details.JobTitle</p>
+    </div>
+
+    <div class="-mx-[8mm] my-2 h-[1px] bg-gray-400"></div>
+
+    @* Content *@
+    <div class="flex grow">
+        @* Left *@
+        <div class="grow space-y-2">
+            @* Summary *@
+            <p class="text-xs mt-2 me-7">@Resume.Details.Summary</p>
+
+            @* Experience *@
+            <div>
+                <h2 class="font-bold text-lg">@Resume.Experience.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                @foreach(var exp in Resume.Experience.Items)
+                {
+                    <div class="my-2">
+                        <div class="flex justify-between">
+                            <h3 class="text-sm text-center">
+                                <span class="font-bold">@exp.JobTitle</span>
+                                <span class="font-bold text-b text-blue-800">@@</span>
+                                <span class="font-medium text-gray-700">@exp.Company</span>
+                            </h3>
+                            <p class="text-xs font-medium text-gray-600">@exp.StartDate.ToString(Resume.Config.DateFormat) - @(exp.EndDate?.ToString(Resume.Config.DateFormat) ?? Resume.Config.Today)</p>
+                        </div>
+                        <p class="text-sm "></p>
+                        @if (!string.IsNullOrEmpty(exp.Summary))
+                        {
+                            <p class="text-sm">@exp.Summary</p>
+                        }
+                        @if (exp.Information.Length is not 0)
+                        {
+                            <ul class="list-disc ms-4 text-xs">
+                                @foreach(var info in exp.Information)
+                                {
+                                    <li>
+                                        @if (!string.IsNullOrEmpty(info.Title))
+                                        {
+                                            <span></span>
+                                        }
+                                        <span>@info.Description</span>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                }
+            </div>
+
+            @* Education *@
+            <div>
+                <h2 class="font-bold text-lg">@Resume.Education.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                @foreach(var edu in Resume.Education.Items)
+                {
+                    <div class="my-2">
+                        <div class="flex justify-between">
+                            <h3 class="font-bold text-sm">@edu.Degree</h3>
+                            <p class="text-xs font-medium text-gray-600 text-nowrap">@edu.StartDate.ToString(Resume.Config.DateFormat) - @(edu.EndDate?.ToString(Resume.Config.DateFormat) ?? Resume.Config.Today)</p>
+                        </div>
+                        <p class="text-xs font-medium text-gray-600">@edu.Institution</p>
+                        @if (edu.Information.Length is not 0)
+                        {
+                            <ul class="list-disc ms-4 text-xs">
+                                @foreach(var info in edu.Information)
+                                {
+                                    <li>
+                                        @if (!string.IsNullOrEmpty(info.Title))
+                                        {
+                                            @if (!string.IsNullOrEmpty(info.Url))
+                                            {
+                                                <a class="underline" href="@info.Url" target="_blank">@info.Title</a>
+                                                <span></span>
+                                            }
+                                            else
+                                            {
+                                                <span>@info.Title</span>
+                                                <span></span>
+                                            }
+                                        }
+                                        <span>@info.Description</span>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                }
+            </div>
+
+            @* Projects *@
+            <div>
+                <h2 class="font-bold text-lg">@Resume.Projects.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                @foreach (var proj in Resume.Projects.Items)
+                {
+                    <div class="my-2 flex flex-col">
+                        <div class="flex items-center gap-1">
+                            <h3 class="mb-0 font-bold text-sm">@proj.Title</h3>
+                            <span class="font-bold text-sm text-blue-800">@@</span>
+                            <a class="mt-0 font-semibold text-xs text-gray-600" href="@proj.Url" target="_blank">@proj.Url</a>
+                        </div>
+                        <ul class="list-disc">
+                            <li class="ms-4 text-xs">@proj.Description</li>
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="-mt-2 -mb-[8mm] mx-4 w-[1px] bg-gray-400"></div>
+
+        @* Right *@
+        <div class="space-y-3 max-w-48">
+            @* Contact *@
+            <div>
+                <h2 class="font-bold text-sm">@Resume.Contact.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                <div class="flex flex-col text-xs font-medium text-nowrap">
+                    <a href="mailto:@(Resume.Contact.Email)" target="_blank">📧 @Resume.Contact.Email</a>
+                    <div>📱 @Resume.Contact.Phone</div>
+                    <div>🏠 @Resume.Contact.Address</div>
+                    <div>
+                        <span>🔗 </span>
+                        @foreach (var website in @Resume.Contact.Websites)
+                        {
+                            var isLast = Resume.Contact.Websites[^1] == website;
+                            <a class="font-medium underline" href="@website.Url" target="_blank">@website.Title</a>
+                            <span>@(isLast ? "" : " / ")</span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            @* Certifications *@
+            <div>
+                <h2 class="font-bold text-sm">@Resume.Certifications.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                <ul class="flex flex-col text-xs font-medium">
+                    @foreach (var cert in @Resume.Certifications.Items)
+                    {
+                        <li class="font-medium">
+                            <span>@cert.Title @@ @cert.Issuer</span> <br />
+                            <span class="text-2xs">@cert.Date.ToString(Resume.Config.DateFormat) - @cert.Results</span> <br />
+                            <span class="text-gray-600">@cert.Description</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            @* Skills *@
+            <div>
+                <h2 class="font-bold text-sm">@Resume.Skills.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                <ul class="flex flex-col text-xs font-medium">
+                    @foreach (var skill in @Resume.Skills.Items)
+                    {
+                        <li class="font-medium my-1">
+                            <p>@skill.Title</p>
+                            <div class="w-full bg-gray-300 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: @(((double)skill.Level / Resume.Skills.Max) * 100)%"></div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            @* Soft Skills *@
+            <div>
+                <h2 class="font-bold text-sm">@Resume.SoftSkills.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                <ul class="flex flex-col text-xs font-medium list-disc">
+                    @foreach (var skill in @Resume.SoftSkills.Items)
+                    {
+                        <li class="ms-3 my-1">@skill.Title</li>
+                    }
+                </ul>
+            </div>
+
+            @* Knowledge *@
+            <div>
+                <h2 class="font-bold text-sm">@Resume.Knowledge.Title</h2>
+                <div class="my-2 border-b border-gray-300"></div>
+                <div class="flex gap-2 flex-wrap text-xs font-medium">
+                    @foreach (var skill in Resume.Knowledge.Items)
+                    {
+                        <span class="rounded bg-gray-700 text-white px-2 py-0.5 font-medium">@skill</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

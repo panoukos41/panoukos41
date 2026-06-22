@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Profile.ResumeGenerator/Profile.ResumeGenerator.csproj" />
+    <Project Path="src/Profile.StaticSiteGeneration/Profile.StaticSiteGeneration.csproj" />
+    <Project Path="src/Profile/Profile.csproj" />
+  </Folder>
+</Solution>
