@@ -1,4 +1,5 @@
-function Packages ($packages) {
+function Packages ([string[]] $packages, [bool] $uninstall = $false) {
+    Write-Host $packages
     foreach ($package in $packages) {
         if ((winget list --id $package).StartsWith("No installed") | Select-Object -Last 1) {
             Write-Host "Installing $package"
@@ -7,7 +8,8 @@ function Packages ($packages) {
     }
 }
 
-function Modules ($modules) {
+function Modules ([string[]] $modules, [bool] $uninstall = $false) {
+    Write-Host $modules
     foreach ($module in $modules) {
         if (-not(Get-Module -ListAvailable -Name $module)) {
             Write-Host "Installing $module"
@@ -16,15 +18,16 @@ function Modules ($modules) {
     }
 }
 
-function Symlinks([HashTable] $links) {
+function Symlinks([HashTable] $links, [bool] $uninstall = $false) {
+    Write-Host $links
     foreach ($link in $links.GetEnumerator()) {
         if ((Test-Path $link.Name) -and !(Test-Path $link.Value)) {
-            Write-Host "Creating Symlink" -ForegroundColor Yellow
-            Write-Host "FROM: " -NoNewline -ForegroundColor Yellow
-            Write-Host $link.Name -ForegroundColor Green
-            Write-Host "  TO: " -NoNewline -ForegroundColor Red
-            Write-Host $link.Value -ForegroundColor Green
-            New-Item -ItemType SymbolicLink -Target $link.Name -Path $link.Value
+            if ($uninstall) {
+                Remove-Item -Path $link.Value
+            }
+            else {
+                New-Item -ItemType SymbolicLink -Target $link.Name -Path $link.Value
+            }
         }
     }
 }
